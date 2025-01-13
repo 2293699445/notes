@@ -32,8 +32,30 @@
      - 推送本地仓库内容到远程仓库上 git push
      - 从远程仓库拉取内容 git pull
 
-     
+3. git处理冲突
 
-     
+   - 场景1：A从github远程仓库上拉了一个项目下来，B对项目进行了修改，并且重新推送到了远程仓库，同时A也对项目进行了一些修改，如何将A、B二者的代码合并？ 
 
-     
+     -  step1：从远程仓库拉取最新的项目下来
+
+       git fetch origin
+
+     - step2：查看冲突与差异
+
+       git diff origin/远程分支 本地分支
+
+     - step3：合并远程更新到本地&解决冲突
+
+       git merge origin/远程分支
+
+     - step4：提交解决冲突后的修改
+
+       git add .
+
+     - step5：提交修改
+
+       git commit -m "remark"
+
+     - step6：推送到远程仓库 
+
+       git push origin 本地分支名 
